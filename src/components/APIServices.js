@@ -9,6 +9,10 @@ export const getCharacters = async (dispatch) => {
 
 export const getCharacter = async (id) => {
     const response = await fetch(`https://thesimpsonsapi.com/api/characters/${id}`)
+    if(!response.ok){
+        console.log("Error")
+        return
+    }
     const data = await response.json()
     return data
 } 
